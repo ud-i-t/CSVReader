@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RLF3
 {
-    class CSVReader
+    public class CSVReader
     {
         public static List<UserData> Parse(string FileName)
         {
