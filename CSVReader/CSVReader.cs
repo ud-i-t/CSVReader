@@ -9,9 +9,9 @@ namespace RLF3
 {
     public class CSVReader
     {
-        public static List<UserData> Parse(string FileName)
+        public static List<UserData> Parse(string FileName, Encoding encoding)
         {
-            TextFieldParser parser = new TextFieldParser(FileName, Encoding.GetEncoding("Shift_JIS"));
+            TextFieldParser parser = new TextFieldParser(FileName, encoding);
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(",");
 
@@ -38,9 +38,9 @@ namespace RLF3
             return tbl;
         }
 
-        public static List<T> Parse<T>(string FileName) where T : new()
+        public static List<T> Parse<T>(string FileName, Encoding encoding) where T : new()
         {
-            TextFieldParser parser = new TextFieldParser(FileName, Encoding.GetEncoding("Shift_JIS"));
+            TextFieldParser parser = new TextFieldParser(FileName, encoding);
             parser.TextFieldType = FieldType.Delimited;
             parser.SetDelimiters(",");
 
